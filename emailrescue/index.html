@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cold Email Rescue: deliverability audit, fixed price</title>
+<meta name="description" content="Your cold email lands in spam. A fixed-price written audit: SPF, DKIM, DMARC, blocklists, sending practice against the 2025 bulk-sender rules, and a prioritized fix list.">
+<style>
+  :root { --ink:#1a1d21; --muted:#5c6672; --line:#e3e7eb; --accent:#0b5a7a; --accent-soft:#9fc9dd; --bg:#fbfcfd; --target:36px; }
+  @media (pointer:coarse) { :root { --target:44px; } }
+  * { box-sizing:border-box; margin:0; }
+  body { font:16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+  h1 { font-size:2rem; line-height:1.2; margin-bottom:8px; }
+  h2 { font-size:1.15rem; margin:36px 0 12px; }
+  p.lede { font-size:1.1rem; color:var(--muted); margin-bottom:8px; }
+  ul { padding-left:1.2em; }
+  li { margin:6px 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 24px; margin-top:16px; }
+  code.addr { display:block; word-break:break-all; background:#f2f4f6; border:1px solid var(--line); border-radius:6px; padding:10px 12px; font-size:.85rem; margin:8px 0; overflow-wrap:anywhere; }
+  .step { display:flex; gap:12px; margin:10px 0; }
+  .step b { flex:0 0 1.6em; color:var(--accent); }
+  .price { font-size:1.6rem; color:var(--accent); font-weight:600; }
+  .checkrow { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:4px 0; }
+  .checkrow input { flex:1 1 200px; min-width:0; min-height:var(--target); border:1px solid var(--line); border-radius:6px; padding:8px 12px; font-size:16px; }
+  .checkrow a { display:inline-flex; align-items:center; min-height:var(--target); padding:8px 16px; background:var(--accent); color:#fff; border-radius:6px; text-decoration:none; font-weight:600; -webkit-tap-highlight-color:transparent; }
+  .checkrow a:active { filter:brightness(1.1); }
+  a { color:var(--accent); }
+  footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  /* Themed scrollbars, never the default ones */
+  html { scrollbar-width:thin; scrollbar-color:var(--accent) transparent; }
+  html::-webkit-scrollbar { width:10px; height:10px; }
+  html::-webkit-scrollbar-thumb { background:var(--accent-soft); border-radius:5px; }
+  html::-webkit-scrollbar-thumb:hover { background:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cold Email Rescue</h1>
+  <p class="lede">Your cold email is landing in spam, or your domain reputation is shot, and nobody at the ESP can tell you why. A written audit that tells you exactly what is broken, fixed price, no call required.</p>
+
+  <h2>What's wrong</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Google, Yahoo and Microsoft now enforce bulk-sender rules.</strong> Spam complaints under 0.3%, bounces under 2%, and SPF, DKIM and DMARC all required. Miss one and inbox placement collapses across every campaign you send.</li>
+      <li><strong>Recovery is slow on your own.</strong> After a spam trap hits, expect about 21 days to claw back Google and closer to 47 for Microsoft, if the underlying problem is actually fixed.</li>
+      <li><strong>Most ESP dashboards hide the cause.</strong> They show you open rates. They do not show you the missing DMARC record, the stale include in your SPF, or the shared IP that got you blocklisted.</li>
+    </ul>
+  </div>
+
+  <h2>What you get</h2>
+  <div class="card">
+    <p>A written audit, delivered as a document, that covers:</p>
+    <ul>
+      <li><strong>Authentication validation.</strong> SPF parsed record by record, DKIM verified against your actual sending selectors, DMARC policy and reporting checked.</li>
+      <li><strong>Blocklist checks.</strong> Spamhaus, Barracuda, SpamCop and Microsoft SNDS guidance for your sending IPs, with delisting steps if anything is listed.</li>
+      <li><strong>Sending-practice review.</strong> Your volume, list hygiene and complaint exposure measured against the 2025-2026 bulk-sender requirements.</li>
+      <li><strong>A prioritized remediation list.</strong> Numbered fixes in the order that recovers inbox placement fastest, each with the exact record or setting to change.</li>
+    </ul>
+    <p style="margin-top:8px;">One domain per audit. Subdomains of the same root can be added for $150 each.</p>
+  </div>
+
+  <h2>Price and how it works</h2>
+  <div class="card">
+    <div class="step"><b>1.</b><span>Email the domain you send from (or use the free check below). You get an invoice number and a confirmation within a few hours.</span></div>
+    <div class="step"><b>2.</b><span>Pay <span class="price">$450</span> fixed in USDC. No hourly billing, no upsell, no consultation call required.</span></div>
+    <div class="step"><b>3.</b><span>The full written audit comes back within 48 hours of payment. If we find nothing wrong, we say so and tell you what to watch.</span></div>
+  </div>
+
+  <h2>Free check first</h2>
+  <div class="card">
+    <p>Not ready to pay? Send us your domain anyway and we will run the free surface checks (SPF, DMARC, common DKIM selectors, the major blocklists) and reply with the headlines. No charge, no obligation, one domain per email.</p>
+    <div class="checkrow" style="margin-top:12px;">
+      <label for="fdomain" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your domain</label>
+      <input id="fdomain" name="domain" type="text" inputmode="url" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="send" placeholder="yourdomain.com">
+      <a id="fbtn" href="mailto:inbound@mossgate.top?subject=Free%20deliverability%20check&body=Domain%3A%20">Send free check</a>
+    </div>
+    <p style="color:var(--muted); font-size:.9rem; margin-top:8px;">Type your domain and hit the button: it opens your mail app with the domain filled in. The button still works without typing; just add the domain to the email.</p>
+  </div>
+
+  <h2>Payment</h2>
+  <div class="card">
+    <p>USDC on Base:</p>
+    <code class="addr">0x1eAf8042DdF049aEd0eA8D3C1981914a8882BC15</code>
+    <p>USDC on Solana also accepted:</p>
+    <code class="addr">Hokk7bQ6RWhxa32G3xNDrdh2Tnnjt1vX7Hi1SrH9puV6</code>
+    <p style="margin-top:8px; color:var(--muted); font-size:.9rem;">An invoice number is sent with every confirmation: put it in the transfer memo so payment matches your audit.</p>
+  </div>
+
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:inbound@mossgate.top">inbound@mossgate.top</a></p>
+    <p style="color:var(--muted); font-size:.9rem; margin-top:8px;">Independent one-person shop. Your domain records and sending details stay between us: nothing is published, nothing is kept after delivery unless you ask for a recheck.</p>
+  </div>
+
+  <footer>Cold Email Rescue · fixed-price deliverability audits · audits delivered within 48h of payment · invoice numbers valid 48h</footer>
+</main>
+<script>
+  (function () {
+    var d = document.getElementById('fdomain'), b = document.getElementById('fbtn');
+    function upd() {
+      var v = d.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+      b.href = 'mailto:inbound@mossgate.top?subject=' + encodeURIComponent('Free deliverability check') + '&body=' + encodeURIComponent('Domain: ' + v + '\n\nWhere do you send from (ESP), if you know: ');
+    }
+    d.addEventListener('input', upd);
+    upd();
+  })();
+</script>
+</body>
+</html>
